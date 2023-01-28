@@ -14,3 +14,4 @@ const regForUrl=function(value){
 module.exports.valid=valid
 module.exports.regForUrl=regForUrl
 
+

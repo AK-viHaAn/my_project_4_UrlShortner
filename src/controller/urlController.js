@@ -83,29 +83,6 @@ const getUrl = async function (req, res) {
 }
 
 
-/*
-const getUrl = async function (req, res) {
-    try {
-        let urlCode = req.params.urlCode
-        let cache = await get_async(`${urlcode}`)
-        if (cache) {
-            return res.status(302).redirect(cache)
-        } else {
-            let result = await urlModel.findOne({ urlCode: urlCode })
-                if(!result){
-                return res.status(404).send({ status: false, msg: "urlCode not found" })
-            }
-            let finalUrl = result.longUrl
-            let set = await set_async (`${urlcode}`,finalUrl,"EX",60)
-            return res.status(302).redirect(finalUrl)
-        }
-       
-    } catch (err) {
-    res.send({ status: false, message: err.message })
-}
-}
-*/
-
 
 module.exports.urlShorten = urlShorten
 module.exports.getUrl = getUrl
